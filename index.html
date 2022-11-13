@@ -297,7 +297,7 @@
 <!-- <embed src="http://p3qhnc0eg.bkt.clouddn.com/U%20are%20so%20beautiful.mp3" width="0" height="0" loop="-1" autostart="true"> </embed> -->
 <audio loop id="music" autoplay>
 	<source src="background.mp3" type="audio/mpeg"></source>
-</audio> 
+</audio>
 <ul class="cb-slideshow" style="padding: 0;">
 	<li><span>天若</span></li>
 	<li><span>有情</span></li>
@@ -372,14 +372,33 @@ if (!document.createElement('canvas').getContext) {
 	$("#code").typewriter();
 }
 
-window.onload = function () {
-	music = document.getElementById('music')
-	setInterval(function () {
-		if (music.paused) {
-			music.paused = false
-			music.play()
-		}
-	}, 100)
+// window.onload = function () {
+// 	music = document.getElementById('music')
+// 	setInterval(function () {
+// 		if (music.paused) {
+// 			music.paused = false
+// 			music.play()
+// 		}
+// 	}, 100)
+// }
+
+document.addEventListener('DOMContentLoaded', function () {
+  function audioAutoPlay() {
+    var audio = document.getElementById('music');
+    audio.play();
+    document.addEventListener("WeixinJSBridgeReady", function () {
+       audio.play();
+    }, false);
+  }
+  audioAutoPlay();
+});
+
+if (/i(Phone|P(o|a)d)/.test(navigator.userAgent)) {
+  $(document).one('touchstart', function(e) {
+    $('#music').get(0).touchstart = true;
+    $('#music').get(0).play();
+    return false;
+  });
 }
 
 var slideList = []
