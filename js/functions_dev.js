@@ -47,8 +47,8 @@ function getHeartPoint(angle) {
 	var t = angle / Math.PI;
 	// var x = 19.5 * (16 * Math.pow(Math.sin(t), 3));
 	// var y = - 20 * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
-	var x = 9 * (16 * Math.pow(Math.sin(t), 3));
-	var y = - 9.25 * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
+	var x = 8 * (16 * Math.pow(Math.sin(t), 3));
+	var y = - 8.2 * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
 	console.log(offsetX+x, offsetY+y)
 	return new Array(offsetX + x, offsetY + y);
 }
