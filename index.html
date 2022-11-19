@@ -372,12 +372,15 @@ if (!document.createElement('canvas').getContext) {
 
 window.onload = function () {
 	music = document.getElementById('music')
-	setInterval(function () {
-		if (music.paused) {
-			music.paused = false
-			music.play()
-		}
-	}, 100)
+	// setInterval(function () {
+	// 	if (music.paused) {
+	// 		music.paused = false
+	// 		music.play()
+	// 	}
+	// }, 100)
+  document.addEventListener('click', function () {
+    music.play()
+  }, false)
 }
 
 // document.addEventListener('DOMContentLoaded', function () {
